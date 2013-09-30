@@ -10,6 +10,14 @@ func MakeMapStringToStringPtrs(length int) MapStringToStringPtrs {
 	return make(map[string]*string, length)
 }
 
+func MakeMapStringToStringPtrsWithKeys(keys ...string) MapStringToStringPtrs {
+	p := MakeMapStringToStringPtrs(len(keys))
+	for _, key := range keys {
+		p.Set(key, nil)
+	}
+	return p
+}
+
 // Length of the map
 func (p MapStringToStringPtrs) Len() int {
 	return len(p)

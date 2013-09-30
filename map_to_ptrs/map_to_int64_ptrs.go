@@ -10,6 +10,14 @@ func MakeMapStringToInt64Ptrs(length int) MapStringToInt64Ptrs {
 	return make(map[string]*int64, length)
 }
 
+func MakeMapStringToInt64PtrsWithKeys(keys ...string) MapStringToInt64Ptrs {
+	p := MakeMapStringToInt64Ptrs(len(keys))
+	for _, key := range keys {
+		p.Set(key, nil)
+	}
+	return p
+}
+
 // Length of the map
 func (p MapStringToInt64Ptrs) Len() int {
 	return len(p)

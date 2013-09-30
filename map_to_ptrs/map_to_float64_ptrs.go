@@ -10,6 +10,14 @@ func MakeMapStringToFloat64Ptrs(length int) MapStringToFloat64Ptrs {
 	return make(map[string]*float64, length)
 }
 
+func MakeMapStringToFloat64PtrsWithKeys(keys ...string) MapStringToFloat64Ptrs {
+	p := MakeMapStringToFloat64Ptrs(len(keys))
+	for _, key := range keys {
+		p.Set(key, nil)
+	}
+	return p
+}
+
 // Length of the map
 func (p MapStringToFloat64Ptrs) Len() int {
 	return len(p)
