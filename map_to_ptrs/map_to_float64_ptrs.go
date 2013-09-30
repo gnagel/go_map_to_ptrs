@@ -15,6 +15,13 @@ func (p MapStringToFloat64Ptrs) Len() int {
 	return len(p)
 }
 
+// Set all the values to nil
+func (p MapStringToFloat64Ptrs) Reset() {
+	for _, key := range p.Keys() {
+		p[key] = nil
+	}
+}
+
 // Keys of the map
 func (p MapStringToFloat64Ptrs) Keys() []string {
 	keys := make([]string, p.Len())[0:0]

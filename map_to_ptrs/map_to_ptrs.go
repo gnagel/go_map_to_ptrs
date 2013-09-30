@@ -5,6 +5,9 @@ type MapStringToPtr interface {
 	// Length of the contents of the map
 	Len() int
 
+	// Set all the values to nil
+	Reset()
+
 	// Keys in the map
 	Keys() []string
 

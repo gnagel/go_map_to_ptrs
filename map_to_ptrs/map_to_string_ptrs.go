@@ -15,6 +15,13 @@ func (p MapStringToStringPtrs) Len() int {
 	return len(p)
 }
 
+// Set all the values to nil
+func (p MapStringToStringPtrs) Reset() {
+	for _, key := range p.Keys() {
+		p[key] = nil
+	}
+}
+
 // Keys of the map
 func (p MapStringToStringPtrs) Keys() []string {
 	keys := make([]string, p.Len())[0:0]
